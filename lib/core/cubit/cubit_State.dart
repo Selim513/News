@@ -19,6 +19,7 @@ class NewsErrorState extends NewsState {
 
   NewsErrorState({required this.error});
 }
+
 //----------------------Search---------------------------
 class SearchInitState extends NewsState {}
 
@@ -35,6 +36,7 @@ class SearchErrorState extends NewsState {
 
   SearchErrorState({required this.error});
 }
+
 //------------------------Sources---------------------------
 class SourcesNewsInitState extends NewsState {}
 
@@ -50,4 +52,21 @@ class SourcesNewsErrorState extends NewsState {
   final String error;
 
   SourcesNewsErrorState({required this.error});
+}
+
+//----------------------------deafult----------------------------
+class CounterysNewsInitState extends NewsState {}
+
+class CounterysNewsLoadingState extends NewsState {}
+
+class CounterysNewsSuccessState extends NewsState {
+  final NewsModel model;
+
+  CounterysNewsSuccessState({required this.model});
+}
+
+class CounterysNewsErrorState extends NewsState {
+  final String error;
+
+  CounterysNewsErrorState({required this.error});
 }

@@ -22,6 +22,23 @@ class ApiServices {
     return null;
   }
 
+  //----------------------------------by deafult---------------------------------
+  Future<NewsModel?> getApibyCountery() async {
+    try {
+      var url = Uri.parse(
+          'https://newsapi.org/v2/top-headlines?country=us&apiKey=4cc0f2d94c2f4192bb3bd972dd1140ca');
+      var res = await http.get(url);
+      if (res.statusCode == 200) {
+        var data = jsonDecode(res.body);
+        NewsModel posts = NewsModel.fromJson(data);
+        return posts;
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+    return null;
+  }
+
 //-----------------------------------Search------------------------------------
   Future<NewsModel?> getApiSearch(Search) async {
     try {

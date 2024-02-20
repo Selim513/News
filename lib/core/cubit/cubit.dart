@@ -47,4 +47,18 @@ class NewsCubit extends Cubit<NewsState> {
       });
     }
   }
+
+  //--------------------------------deafult-------------------
+  getByCountery() {
+    emit(CounterysNewsLoadingState());
+    try {
+      ApiServices().getApibyCountery().then((value) {
+        emit(CounterysNewsSuccessState(model: value!));
+      });
+    } catch (e) {
+      ApiServices().getApibyCountery().then((value) {
+        emit(CounterysNewsErrorState(error: e.toString()));
+      });
+    }
+  }
 }

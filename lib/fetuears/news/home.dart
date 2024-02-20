@@ -37,7 +37,7 @@ class _HomeState extends State<HomeNews> {
                         return ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: Image.asset(
-                            "assets/city.png",
+                            "assets/breaking-news.png",
                             fit: BoxFit.cover,
                           ),
                         );
@@ -74,7 +74,6 @@ class _HomeState extends State<HomeNews> {
                   ),
                   const Gap(10),
                   ButtonsTabBar(
-                    
                       contentPadding: const EdgeInsets.all(10),
                       backgroundColor: Appcolors.lemonadaColor,
                       unselectedBackgroundColor: Appcolors.greyColor,
@@ -82,7 +81,6 @@ class _HomeState extends State<HomeNews> {
                       labelStyle: getsmallfont(),
                       unselectedLabelStyle: getsmallfont(),
                       unselectedBorderColor: Appcolors.greyColor,
-                      
                       tabs: [
                         Tab(
                             child: Text(
