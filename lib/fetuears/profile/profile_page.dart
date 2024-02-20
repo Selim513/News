@@ -20,6 +20,8 @@ class _ProfileState extends State<Profile> {
   void initState() {
     super.initState();
     isVisvile = false;
+    appstoorage.getcahcedData(appstoorage.IMAGE);
+    appstoorage.getcahcedData(appstoorage.NAME);
   }
 
   bool isVisvile = true;
@@ -206,9 +208,10 @@ class _ProfileState extends State<Profile> {
                                                 foregroundColor: Colors.black),
                                             onPressed: () {
                                               name = editName.text;
-                                              appstoorage.cachedData(
-                                                  appstoorage.NAME, editName);
                                               setState(() {});
+                                              appstoorage.cachedData(
+                                                  appstoorage.NAME,
+                                                  editName.text);
                                               Navigator.of(context).pop();
                                             },
                                             child: const Text('Confirm'))
