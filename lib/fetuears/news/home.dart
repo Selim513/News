@@ -9,13 +9,16 @@ import 'package:news_sport_app/fetuears/news/widgets/categoery.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeNews extends StatefulWidget {
-  const HomeNews({super.key});
+  const HomeNews({
+    super.key,
+  });
 
   @override
   State<HomeNews> createState() => _HomeState();
 }
 
 class _HomeState extends State<HomeNews> {
+  var data;
   int curruntIndex = 0;
   @override
   @override

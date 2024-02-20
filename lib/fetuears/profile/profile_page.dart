@@ -24,6 +24,8 @@ class _ProfileState extends State<Profile> {
     appstoorage.getcahcedData(appstoorage.NAME);
   }
 
+  var nameKey = GlobalKey<FormState>();
+
   bool isVisvile = true;
   var editName = TextEditingController();
   final FocusNode keyboard = FocusNode();
@@ -184,38 +186,52 @@ class _ProfileState extends State<Profile> {
                                   color: Appcolors.backGroundColor,
                                   height: 150,
                                   child: SingleChildScrollView(
-                                    child: Column(
-                                      children: [
-                                        TextFormField(
-                                          controller: editName,
-                                          style: const TextStyle(
-                                              color: Colors.white),
-                                          decoration: const InputDecoration(
-                                              hintText: 'Edit your name',
-                                              hintStyle: TextStyle(
-                                                  color: Colors.grey)),
-                                        ),
-                                        const Gap(20),
-                                        ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                                shape:
-                                                    ContinuousRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(20)),
-                                                backgroundColor:
-                                                    Appcolors.lemonadaColor,
-                                                foregroundColor: Colors.black),
-                                            onPressed: () {
-                                              name = editName.text;
-                                              setState(() {});
-                                              appstoorage.cachedData(
-                                                  appstoorage.NAME,
-                                                  editName.text);
-                                              Navigator.of(context).pop();
+                                    child: Form(
+                                      key: nameKey,
+                                      child: Column(
+                                        children: [
+                                          TextFormField(
+                                            validator: (value) {
+                                              if (value!.isEmpty) {
+                                                return ' Enter a name';
+                                              }
+                                              return null;
                                             },
-                                            child: const Text('Confirm'))
-                                      ],
+                                            controller: editName,
+                                            style: const TextStyle(
+                                                color: Colors.white),
+                                            decoration: const InputDecoration(
+                                                hintText: 'Edit your name',
+                                                hintStyle: TextStyle(
+                                                    color: Colors.grey)),
+                                          ),
+                                          const Gap(20),
+                                          ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                  shape:
+                                                      ContinuousRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      20)),
+                                                  backgroundColor:
+                                                      Appcolors.lemonadaColor,
+                                                  foregroundColor:
+                                                      Colors.black),
+                                              onPressed: () {
+                                                if (nameKey.currentState!
+                                                    .validate()) {
+                                                  name = editName.text;
+                                                  setState(() {});
+                                                  appstoorage.cachedData(
+                                                      appstoorage.NAME,
+                                                      editName.text);
+                                                  Navigator.of(context).pop();
+                                                }
+                                              },
+                                              child: const Text('Confirm'))
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),

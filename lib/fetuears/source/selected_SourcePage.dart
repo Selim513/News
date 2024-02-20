@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:news_sport_app/core/utils/colorsApp/app_Colors.dart';
-import 'package:news_sport_app/fetuears/source/Sources_api.dart';
 
-class Source extends StatelessWidget {
-  const Source({super.key});
+class Selected extends StatelessWidget {
+  const Selected({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String source;
     return Scaffold(
       backgroundColor: Appcolors.backGroundColor,
       appBar: AppBar(
@@ -18,7 +18,7 @@ class Source extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SourcesApi(source: 'bbc-news'),
+           
           ],
         ),
       )),
