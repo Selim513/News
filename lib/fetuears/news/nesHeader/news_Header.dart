@@ -40,8 +40,12 @@ class _news_headerState extends State<news_header> {
         Row(
           children: [
             Text.rich(TextSpan(children: [
-              TextSpan(text: "Hello,", style: getlargefont()),
-              TextSpan(text: name, style: getlargefont()),
+              TextSpan(
+                  text: "Hello,",
+                  style: getlargefont(color: Appcolors.lemonadaColor)),
+              TextSpan(
+                  text: name,
+                  style: getlargefont(color: Appcolors.lemonadaColor)),
             ])),
             const Spacer(),
             CircleAvatar(
