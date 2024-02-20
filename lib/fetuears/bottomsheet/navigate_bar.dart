@@ -39,7 +39,7 @@ class _BottomBarState extends State<BottomBar> {
           selectedLabelStyle: const TextStyle(color: Colors.red),
           unselectedItemColor: Colors.grey,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "HomeNews"),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
             BottomNavigationBarItem(icon: Icon(Icons.source), label: "Source"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),

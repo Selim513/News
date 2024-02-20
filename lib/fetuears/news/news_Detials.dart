@@ -48,10 +48,11 @@ class Details extends StatelessWidget {
                 ],
               ),
               const Gap(30),
-              Row(
+              Column(
                 children: [
                   Text(
                     'Author: ${model.author}',
+                    overflow: TextOverflow.clip,
                     style: getmeduimfont(color: Colors.green),
                   ),
                 ],

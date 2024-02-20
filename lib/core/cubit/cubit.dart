@@ -35,15 +35,15 @@ class NewsCubit extends Cubit<NewsState> {
   }
   //-------------------------------Sources----------------
 
-  getBySourc(Source) {
-    emit(SearchLoadingState());
+  getBySourc(source) {
+    emit(SourcesNewsLoadingState());
     try {
-      ApiServices().getApiSource(Source).then((value) {
-        emit(SearchSuccessState(model: value!));
+      ApiServices().getApiSource(source).then((value) {
+        emit(SourcesNewsSuccessState(model: value!));
       });
     } catch (e) {
-      ApiServices().getApiSource(Source).then((value) {
-        emit(SearchErrorState(error: e.toString()));
+      ApiServices().getApiSource(source).then((value) {
+        emit(SourcesNewsErrorState(error: e.toString()));
       });
     }
   }
